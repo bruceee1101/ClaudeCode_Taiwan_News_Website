@@ -4,6 +4,11 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# 固定用 C locale，讓 sed/awk 一律以位元組處理。
+# 否則 [[:space:]] 在 Linux（UTF-8 locale）會吃掉全形空格 U+3000、
+# 在 Windows Git Bash（C locale）不會，同一份 news/ 在兩邊會產生不同的 index.html。
+export LC_ALL=C
+
 WEEKDAYS=(日 一 二 三 四 五 六)
 
 latest_date=""
