@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>財時 — 台灣金融股市新聞 2026年6月27日</title>
+  <style>
+    /* ===== CSS 變數：TIME 風格色彩與字體系統 ===== */
+    :root {
+      --time-red:        #D62503;
+      --time-black:      #000000;
+      --time-dark:       #1A1A1A;
+      --time-gray:       #555555;
+      --time-light-gray: #F2F2F2;
+      --time-border:     #E0E0E0;
+      --time-white:      #FFFFFF;
+
+      --font-headline: "Franklin Gothic Medium", "ITC Franklin Gothic", "Franklin Gothic",
+                       Arial Narrow, Arial, sans-serif;
+      --font-body:     Georgia, "Times New Roman", Times, serif;
+      --font-display:  "Duplicate Ionic", Georgia, "Times New Roman", serif;
+      --font-ui:       "Franklin Gothic Medium", Arial, Helvetica, sans-serif;
+
+      --space-xs:  4px;
+      --space-sm:  8px;
+      --space-md:  16px;
+      --space-lg:  24px;
+      --space-xl:  32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+
+      --container-max: 1122px;
+      --nav-height: 60px;
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background-color: var(--time-white);
+      color: var(--time-dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== 容器 ===== */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    @media (min-width: 1024px) {
+      .container { padding: 0 var(--space-lg); }
+    }
+
+    /* ===== Breaking Banner ===== */
+    .breaking-banner {
+      background-color: var(--time-red);
+      color: var(--time-white);
+      text-align: center;
+      padding: var(--space-sm) var(--space-md);
+      font-family: var(--font-headline);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .breaking-label {
+      background-color: var(--time-white);
+      color: var(--time-red);
+      padding: 2px 7px;
+      margin-right: var(--space-sm);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===== 主導覽列 ===== */
+    .site-header {
+      background-color: var(--time-black);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--space-lg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .site-logo {
+      color: var(--time-white);
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .site-logo .logo-red { color: var(--time-red); }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+    }
+    .nav-menu li a {
+      color: var(--time-white);
+      font-family: var(--font-headline);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 var(--space-md);
+      transition: color 0.15s ease;
+    }
+    .nav-menu li a:hover { color: var(--time-red); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .nav-date {
+      color: #999;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+    .nav-subscribe {
+      background-color: var(--time-red);
+      color: var(--time-white);
+      padding: 7px 14px;
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .nav-subscribe:hover { background-color: #b51f02; }
+    @media (max-width: 767px) {
+      .nav-menu { display: none; }
+      .nav-date { display: none; }
+      .site-logo { font-size: 26px; }
+    }
+
+    /* ===== 次導覽 / 分類欄 ===== */
+    .category-nav {
+      background-color: var(--time-white);
+      border-bottom: 2px solid var(--time-red);
+      height: 40px;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      padding: 0 var(--space-lg);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .category-nav::-webkit-scrollbar { display: none; }
+    .category-nav a {
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--time-dark);
+      padding: 0 var(--space-md);
+      white-space: nowrap;
+      transition: color 0.15s ease;
+      flex-shrink: 0;
+    }
+    .category-nav a:first-child { padding-left: 0; }
+    .category-nav a:hover, .category-nav a.active { color: var(--time-red); }
+
+    /* ===== 主內容區 ===== */
+    .main-content { padding: var(--space-2xl) 0 var(--space-3xl); }
+
+    /* ===== 版塊標題 ===== */
+    .section-label {
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--time-dark);
+      border-left: 4px solid var(--time-red);
+      padding-left: 10px;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ===== Hero 頭條 ===== */
+    .hero-section { margin-bottom: var(--space-2xl); }
+    .hero-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      background-color: var(--time-black);
+      overflow: hidden;
+    }
+    @media (min-width: 800px) {
+      .hero-card { grid-template-columns: 1.6fr 1fr; }
+    }
+    .hero-visual {
+      position: relative;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 40%, #2d1a1a 70%, #3d0000 100%);
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-xl);
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(255,255,255,0.012) 2px,
+          rgba(255,255,255,0.012) 4px
+        );
+    }
+    .hero-visual::after {
+      content: "▼ 1,683.5";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      font-family: var(--font-headline);
+      font-size: clamp(60px, 10vw, 110px);
+      font-weight: 900;
+      color: rgba(214, 37, 3, 0.18);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .hero-text-overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .hero-kicker {
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--time-red);
+      display: block;
+      margin-bottom: var(--space-sm);
+    }
+    .hero-headline {
+      font-family: var(--font-headline);
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--time-white);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-md);
+    }
+    .hero-headline a {
+      color: inherit;
+      transition: opacity 0.15s ease;
+    }
+    .hero-headline a:hover { opacity: 0.85; }
+    .hero-read-more {
+      display: inline-block;
+      border: 2px solid var(--time-red);
+      color: var(--time-white);
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .hero-read-more:hover {
+      background-color: var(--time-red);
+      color: var(--time-white);
+    }
+    .hero-summary-panel {
+      padding: var(--space-xl) var(--space-lg);
+      border-left: 4px solid var(--time-red);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 799px) {
+      .hero-summary-panel {
+        border-left: none;
+        border-top: 4px solid var(--time-red);
+        padding: var(--space-md);
+      }
+    }
+    .hero-summary-label {
+      font-family: var(--font-headline);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--time-red);
+      margin-bottom: var(--space-sm);
+    }
+    .hero-summary-text {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+    .hero-summary-meta {
+      margin-top: var(--space-md);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.04em;
+    }
+    .hero-summary-meta strong {
+      color: var(--time-red);
+      font-weight: 700;
+    }
+
+    /* ===== 次要新聞格線 ===== */
+    .news-grid-section { margin-top: var(--space-2xl); }
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+    @media (min-width: 600px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .news-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ===== 文章卡片 ===== */
+    .article-card {
+      background: var(--time-white);
+      border-bottom: 1px solid var(--time-border);
+      padding-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-image-wrap {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background-color: var(--time-light-gray);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .card-image-wrap .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .card-image-wrap a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .card-body { flex: 1; display: flex; flex-direction: column; }
+    .kicker {
+      font-family: var(--font-headline);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--time-red);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-family: var(--font-headline);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--time-dark);
+      margin-bottom: var(--space-sm);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-title a {
+      color: inherit;
+      transition: color 0.15s ease;
+    }
+    .card-title a:hover { color: var(--time-red); }
+    .card-excerpt {
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--time-gray);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+    .card-meta {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: #999;
+      margin-top: var(--space-sm);
+      letter-spacing: 0.04em;
+    }
+
+    /* 各卡片配色（以編號色區分，模擬無實際圖片情境） */
+    .card-bg-1  { background-color: #1a2030; }
+    .card-bg-2  { background-color: #1c1a2a; }
+    .card-bg-3  { background-color: #1a2820; }
+    .card-bg-4  { background-color: #282010; }
+    .card-bg-5  { background-color: #201820; }
+    .card-bg-6  { background-color: #1a2028; }
+    .card-bg-7  { background-color: #1c2018; }
+    .card-bg-8  { background-color: #201a20; }
+    .card-bg-9  { background-color: #18201c; }
+
+    /* ===== 分隔線 ===== */
+    .section-divider {
+      height: 1px;
+      background-color: var(--time-border);
+      margin: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background-color: var(--time-black);
+      color: #aaa;
+      padding: var(--space-2xl) 0 var(--space-xl);
+      margin-top: var(--space-3xl);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    @media (min-width: 768px) {
+      .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+    }
+    .footer-brand .footer-logo {
+      color: var(--time-white);
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-sm);
+    }
+    .footer-brand .footer-logo span { color: var(--time-red); }
+    .footer-tagline {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: #666;
+      font-style: italic;
+    }
+    .footer-links {
+      display: flex;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .footer-link-group h4 {
+      font-family: var(--font-headline);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--time-white);
+      margin-bottom: var(--space-sm);
+    }
+    .footer-link-group ul { list-style: none; }
+    .footer-link-group ul li { margin-bottom: 6px; }
+    .footer-link-group ul li a {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: #888;
+      transition: color 0.15s ease;
+    }
+    .footer-link-group ul li a:hover { color: var(--time-white); }
+    .footer-bottom {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-md);
+      border-top: 1px solid #222;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: #555;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Breaking Banner ===== -->
+  <div class="breaking-banner" role="alert">
+    <span class="breaking-label">即時</span>
+    台股6月26日重挫1,683.5點，連四黑走勢，外資單日賣超逾1,774億元
+  </div>
+
+  <!-- ===== 主導覽列 ===== -->
+  <header class="site-header" role="banner">
+    <div class="site-logo" aria-label="財時 — 台灣金融新聞">
+      <span class="logo-red">財</span>時
+    </div>
+    <nav aria-label="主要導覽">
+      <ul class="nav-menu">
+        <li><a href="#">台股</a></li>
+        <li><a href="#">美股</a></li>
+        <li><a href="#">總經</a></li>
+        <li><a href="#">金融</a></li>
+        <li><a href="#">ETF</a></li>
+        <li><a href="#">分析</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-date">2026年6月27日</span>
+      <button class="nav-subscribe" aria-label="訂閱財時電子報">訂閱</button>
+    </div>
+  </header>
+
+  <!-- ===== 次導覽 / 分類欄 ===== -->
+  <nav class="category-nav" aria-label="分類導覽">
+    <a href="#" class="active">今日焦點</a>
+    <a href="#">台股動態</a>
+    <a href="#">外資動向</a>
+    <a href="#">金融機構</a>
+    <a href="#">總經展望</a>
+    <a href="#">ETF 排行</a>
+    <a href="#">美股速遞</a>
+  </nav>
+
+  <!-- ===== 主內容 ===== -->
+  <main class="main-content" role="main">
+    <div class="container">
+
+      <!-- === Hero 頭條 === -->
+      <section class="hero-section" aria-label="頭條新聞">
+        <p class="section-label">頭條 / Today's Lead</p>
+        <div class="hero-card" role="article">
+          <!-- 左側視覺區 -->
+          <div class="hero-visual">
+            <div class="hero-text-overlay">
+              <span class="hero-kicker">台股 &middot; 市場動態</span>
+              <h1 class="hero-headline">
+                <a href="https://udn.com/news/story/7251/9590372"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  台股收跌1,683.5點連四黑　聯發科跌停、台積電下跌50元
+                </a>
+              </h1>
+              <a href="https://udn.com/news/story/7251/9590372"
+                 class="hero-read-more"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="閱讀完整報導：台股收跌1,683.5點連四黑">
+                閱讀全文
+              </a>
+            </div>
+          </div>
+          <!-- 右側摘要區 -->
+          <div class="hero-summary-panel">
+            <span class="hero-summary-label">新聞摘要</span>
+            <p class="hero-summary-text">
+              台股6月26日重挫1,683.5點（跌幅3.64%），收44,571.76點，連四黑走勢，成交量達1.55兆元。美國5月PCE飆升至4.1%引發升息預期，疊加日韓股市同步重挫逾4%，加重賣壓。台積電跌50元收2,340元，聯發科亮燈跌停，兩檔合計貢獻逾800點跌幅。
+            </p>
+            <p class="hero-summary-meta">
+              <strong>聯合新聞網</strong> &nbsp;&middot;&nbsp; 2026年6月26日
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" role="separator"></div>
+
+      <!-- === 次要新聞格線 === -->
+      <section class="news-grid-section" aria-label="今日財經新聞">
+        <p class="section-label">財經要聞 / Finance &amp; Markets</p>
+        <div class="news-grid">
+
+          <!-- 第2則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E9%87%8F%E5%80%92%E8%B2%A8%E5%8F%B0%E8%82%A1%E5%8D%83%E9%BB%9E%E6%BA%9C%E6%BB%91%E6%A2%AF%EF%BC%81%E9%9D%A2%E6%9D%BF%E4%B8%89%E8%99%8E%E9%80%86%E9%A2%A8%E9%96%83%E7%B4%85%E5%85%89%EF%BD%9Cyahoo%E8%B2%A1%E7%B6%93%E6%8E%83%E6%8F%8F-085811925.html"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：外資天量倒貨台股千點溜滑梯">
+                <div class="img-placeholder card-bg-1">外資動向</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">外資動向</span>
+              <h2 class="card-title">
+                <a href="https://tw.stock.yahoo.com/news/%E5%A4%96%E8%B3%87%E9%87%8F%E5%80%92%E8%B2%A8%E5%8F%B0%E8%82%A1%E5%8D%83%E9%BB%9E%E6%BA%9C%E6%BB%91%E6%A2%AF%EF%BC%81%E9%9D%A2%E6%9D%BF%E4%B8%89%E8%99%8E%E9%80%86%E9%A2%A8%E9%96%83%E7%B4%85%E5%85%89%EF%BD%9Cyahoo%E8%B2%A1%E7%B6%93%E6%8E%83%E6%8F%8F-085811925.html"
+                   target="_blank" rel="noopener noreferrer">
+                  外資1774億天量倒貨台股千點溜滑梯！面板三虎逆風閃紅光
+                </a>
+              </h2>
+              <p class="card-excerpt">外資單日賣超高達1,774億元天量，造成台股千點急跌。面板三虎（友達、群創、彩晶）逆勢收紅，成為盤面少數亮點。</p>
+              <div class="card-meta">Yahoo財經 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第3則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%B4%A9%E7%9B%A4%E5%85%83%E5%85%87-%E7%B6%93%E7%90%86%E4%BA%BA%E5%90%AB%E6%B7%9A%E5%A4%A7%E7%A0%8D%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E8%81%AF%E7%99%BC%E7%A7%91-%E5%A4%96%E5%AA%92%E6%8F%AD%E5%85%A7%E6%83%85-010048853.html"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：台股崩盤元兇外媒揭內情">
+                <div class="img-placeholder card-bg-2">市場分析</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">市場分析</span>
+              <h2 class="card-title">
+                <a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%B4%A9%E7%9B%A4%E5%85%83%E5%85%87-%E7%B6%93%E7%90%86%E4%BA%BA%E5%90%AB%E6%B7%9A%E5%A4%A7%E7%A0%8D%E5%8F%B0%E7%A9%8D%E9%9B%BB-%E8%81%AF%E7%99%BC%E7%A7%91-%E5%A4%96%E5%AA%92%E6%8F%AD%E5%85%A7%E6%83%85-010048853.html"
+                   target="_blank" rel="noopener noreferrer">
+                  台股崩盤元兇！經理人含淚大砍台積電、聯發科　外媒揭內情
+                </a>
+              </h2>
+              <p class="card-excerpt">外媒揭露台股崩盤根源在結構性風險：台積電占加權指數41.5%，基金為符合分散持倉法規，被迫大幅減碼，形成「越漲越賣」惡性循環，資金持續流向被動型ETF。</p>
+              <div class="card-meta">Yahoo財經 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第4則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://udn.com/news/story/7239/9589456"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：郭明鑑請辭國泰世華董座">
+                <div class="img-placeholder card-bg-3">金融機構</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">金融機構</span>
+              <h2 class="card-title">
+                <a href="https://udn.com/news/story/7239/9589456"
+                   target="_blank" rel="noopener noreferrer">
+                  兼職爭議延燒！郭明鑑請辭國泰世華董座　國泰金：將聘為資深顧問
+                </a>
+              </h2>
+              <p class="card-excerpt">郭明鑑因兼職爭議，即日請辭國泰世華銀行董座等職，改聘為資深顧問。國泰投信就旗下8檔基金違規交易，補償約4.9億元予逾5萬名受益人。</p>
+              <div class="card-meta">聯合新聞網 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第5則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://www.cna.com.tw/news/afe/202606260313.aspx"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：永豐金擬現增募資200億元">
+                <div class="img-placeholder card-bg-4">資本市場</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">資本市場</span>
+              <h2 class="card-title">
+                <a href="https://www.cna.com.tw/news/afe/202606260313.aspx"
+                   target="_blank" rel="noopener noreferrer">
+                  永豐金擬現增募資200億元　強化證券子公司資本結構
+                </a>
+              </h2>
+              <p class="card-excerpt">永豐金擬現增200億元，125億注資證券子公司支援融資與自營業務，75億償還金控負債；今年前5月永豐金證券稅後淨利達62.4億元，年增逾3倍。</p>
+              <div class="card-meta">中央社 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第6則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://news.cnyes.com/news/id/6512503"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：美股重點新聞摘要2026年6月26日">
+                <div class="img-placeholder card-bg-5">美股速遞</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">美股速遞</span>
+              <h2 class="card-title">
+                <a href="https://news.cnyes.com/news/id/6512503"
+                   target="_blank" rel="noopener noreferrer">
+                  美股重點新聞摘要　2026年6月26日
+                </a>
+              </h2>
+              <p class="card-excerpt">蘋果宣布調漲Mac、iPad等產品售價，歸因AI資料中心推升記憶體成本；美光科技被分析師列為全球前三大重要股票；美國Q1 GDP上修至2.1%，惟消費幾近停滯。</p>
+              <div class="card-meta">鉅亨網 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第7則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://www.sinotrade.com.tw/richclub/hotstock/%E5%8F%B0%E8%82%A1%E6%80%A5%E8%B7%8C%E9%82%84%E6%9C%83%E5%86%8D%E9%9C%87%E5%97%8E-%E6%9C%AA%E4%BE%86%E5%85%A9%E9%80%B1%E9%97%9C%E9%8D%B5%E4%BA%8B%E4%BB%B6%E4%B8%80%E6%AC%A1%E7%9C%8B-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E9%99%A4%E6%81%AF-%E7%BE%8E%E5%9C%8B-CPI-Fed-%E6%B1%BA%E7%AD%96%E6%88%90%E8%A7%80%E5%AF%9F%E9%87%8D%E9%BB%9E-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-6a26074c6c6d82bf0a9806eb"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：台股急跌還會再震嗎">
+                <div class="img-placeholder card-bg-6">總經展望</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">總經展望</span>
+              <h2 class="card-title">
+                <a href="https://www.sinotrade.com.tw/richclub/hotstock/%E5%8F%B0%E8%82%A1%E6%80%A5%E8%B7%8C%E9%82%84%E6%9C%83%E5%86%8D%E9%9C%87%E5%97%8E-%E6%9C%AA%E4%BE%86%E5%85%A9%E9%80%B1%E9%97%9C%E9%8D%B5%E4%BA%8B%E4%BB%B6%E4%B8%80%E6%AC%A1%E7%9C%8B-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E9%99%A4%E6%81%AF-%E7%BE%8E%E5%9C%8B-CPI-Fed-%E6%B1%BA%E7%AD%96%E6%88%90%E8%A7%80%E5%AF%9F%E9%87%8D%E9%BB%9E-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-6a26074c6c6d82bf0a9806eb"
+                   target="_blank" rel="noopener noreferrer">
+                  台股急跌還會再震嗎？未來兩週關鍵事件一次看：台積電除息、美國CPI、Fed決策成觀察重點
+                </a>
+              </h2>
+              <p class="card-excerpt">台股急跌後市場關注未來兩週三大事件：台積電除息行情能否撐盤、美國CPI數據走向，以及Fed利率決策是否維持鷹派立場，三者將左右台股短期反彈空間。</p>
+              <div class="card-meta">元大寶來 &nbsp;&middot;&nbsp; 2026年6月27日</div>
+            </div>
+          </article>
+
+          <!-- 第8則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://www.sinotrade.com.tw/richclub/hotstock/2026-%E4%B8%8B%E5%8D%8A%E5%B9%B4%E9%96%8B%E5%B1%80%E9%9C%87%E7%9B%AA-%E5%8F%B0%E7%BE%8E%E8%82%A1%E6%8A%95%E8%B3%87%E4%BA%BA-6-%E5%88%B0-7-%E6%9C%88%E5%BF%85%E7%9C%8B%E7%9A%84-8-%E5%A4%A7%E7%B8%BD%E7%B6%93%E4%BA%8B%E4%BB%B6-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-6a2a2c51ab26abbf4c8173d2"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：2026下半年8大總經事件">
+                <div class="img-placeholder card-bg-7">投資策略</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">投資策略</span>
+              <h2 class="card-title">
+                <a href="https://www.sinotrade.com.tw/richclub/hotstock/2026-%E4%B8%8B%E5%8D%8A%E5%B9%B4%E9%96%8B%E5%B1%80%E9%9C%87%E7%9B%AA-%E5%8F%B0%E7%BE%8E%E8%82%A1%E6%8A%95%E8%B3%87%E4%BA%BA-6-%E5%88%B0-7-%E6%9C%88%E5%BF%85%E7%9C%8B%E7%9A%84-8-%E5%A4%A7%E7%B8%BD%E7%B6%93%E4%BA%8B%E4%BB%B6-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-6a2a2c51ab26abbf4c8173d2"
+                   target="_blank" rel="noopener noreferrer">
+                  2026下半年開局震盪：台美股投資人6到7月必看的8大總經事件
+                </a>
+              </h2>
+              <p class="card-excerpt">下半年開局台美股震盪加劇，分析師整理6至7月投資人必追蹤的8大總經事件，涵蓋美國CPI、Fed決策、台灣GDP及企業財報等關鍵指標，建議投資人提前布局應對。</p>
+              <div class="card-meta">元大寶來 &nbsp;&middot;&nbsp; 2026年6月27日</div>
+            </div>
+          </article>
+
+          <!-- 第9則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://news.cnyes.com/news/id/6511617"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：台股連跌關鍵買點即將浮現">
+                <div class="img-placeholder card-bg-8">技術分析</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">技術分析</span>
+              <h2 class="card-title">
+                <a href="https://news.cnyes.com/news/id/6511617"
+                   target="_blank" rel="noopener noreferrer">
+                  台股連跌機會難得？關鍵買點即將浮現！
+                </a>
+              </h2>
+              <p class="card-excerpt">台股連跌雖引發恐慌，但分析師認為屬多頭行情正常洗盤，應等待融資餘額有效縮減後出現的技術面轉折。AI供應鏈、光學鏡頭、第三代半導體及機器人概念股為後市四大主流。</p>
+              <div class="card-meta">鉅亨網 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+          <!-- 第10則 -->
+          <article class="article-card">
+            <div class="card-image-wrap">
+              <a href="https://finance.ettoday.net/news/3171017"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="閱讀：主動式ETF排名大洗牌">
+                <div class="img-placeholder card-bg-9">ETF 排行</div>
+              </a>
+            </div>
+            <div class="card-body">
+              <span class="kicker">ETF 排行</span>
+              <h2 class="card-title">
+                <a href="https://finance.ettoday.net/news/3171017"
+                   target="_blank" rel="noopener noreferrer">
+                  台股回檔見真章　主動式ETF排名大洗牌
+                </a>
+              </h2>
+              <p class="card-excerpt">台股回檔期主動式ETF排名大洗牌，00982A漲幅10.65%居冠、00991A次之；年初至今績效最強的00981A卻跌出前段班，凸顯操盤風格差異成為關鍵。</p>
+              <div class="card-meta">ETtoday財經雲 &nbsp;&middot;&nbsp; 2026年6月26日</div>
+            </div>
+          </article>
+
+        </div><!-- /.news-grid -->
+      </section>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo"><span>財</span>時</div>
+          <p class="footer-tagline">台灣金融股市，即時深度報導</p>
+        </div>
+        <nav class="footer-links" aria-label="頁尾導覽">
+          <div class="footer-link-group">
+            <h4>新聞分類</h4>
+            <ul>
+              <li><a href="#">台股動態</a></li>
+              <li><a href="#">外資動向</a></li>
+              <li><a href="#">ETF 排行</a></li>
+              <li><a href="#">總經展望</a></li>
+            </ul>
+          </div>
+          <div class="footer-link-group">
+            <h4>服務</h4>
+            <ul>
+              <li><a href="#">電子報訂閱</a></li>
+              <li><a href="#">市場行事曆</a></li>
+              <li><a href="#">關於財時</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <p class="footer-bottom">
+        &copy; 2026 財時 &mdash; 台灣金融新聞。本頁資料僅供參考，不構成投資建議。
+        &nbsp;|&nbsp; 今日報導日期：2026年6月27日（週六，前交易日6月26日數據）
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
