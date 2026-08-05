@@ -2,7 +2,7 @@
 
 每個交易日 19:00（Asia/Taipei）自動彙整台灣十大金融股市新聞，產出 TIME 雜誌風格的新聞頁。
 
-**網站：** https://bruceee1101.github.io/taiwan-news-daily/
+**網站：** https://bruceee1101.github.io/ClaudeCode_Taiwan_News_Website/
 
 ## 這個 repo 是什麼
 
