@@ -201,7 +201,7 @@ cat > index.html <<HTML
   </main>
 
   <footer class="wrap">
-    每個交易日 19:00 自動彙整台灣十大金融股市新聞，內容由 Claude Code 產出。<br />
+    每個交易日 18:30 自動彙整台灣十大金融股市新聞，內容由 Claude Code 產出。<br />
     所有標題均連向原始新聞網站，本站不轉載全文。
   </footer>
 </body>
